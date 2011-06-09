@@ -16,12 +16,28 @@ Using the sbt-sh plugin (and sbt-0.10) you can invoke shell commands:
 	nothing to commit (working directory clean)
 	> 
 
-Happiness and productivity ensues without the hassle exiting sbt or opening multiple terminals.  
+Happiness and productivity ensues without the hassle of exiting sbt or opening multiple terminals.  
+
+
+Installing
+----------
+
+The easiest way to install the sbt-sh plugin is to add it to your global sbt plugin list. To do this create a *.sbt/plugins/project* file (if it does not already exist). In this file add the dependency on the sbt-sh plugin:
+
+	import sbt._
+	
+	object MyPlugins extends Build {
+	  lazy val root = Project("root", file(".")) dependsOn(
+	    uri("git://github.com/steppenwells/sbt-sh.git")
+	  )
+	}
+
+The sh plugin will be downloaded, built and installed next time you fire up sbt-0.10, and then available in all your sbt-0.10 builds.
 
 Usage
-=====
+-----
 
-The sbt-sh plugin introduces a *sh* command to sbt, this will execute the rest of the line as a shell command. Some examples:
+The sbt-sh plugin introduces a *sh* command to sbt, this will execute the rest of the line as a shell command:
 
 	> sh ls
 	build.sbt
@@ -53,18 +69,3 @@ The sbt-sh plugin introduces a *sh* command to sbt, this will execute the rest o
 	> 
 
 By now I'm sure you've got the idea...
-
-Installing
-----------
-
-The easiest way to install the sbt-sh plugin is to add it to your global sbt plugin list. To do this create a *.sbt/plugins/project* file (if it does not already exist). In this file add the dependency on the sbt-sh plugin:
-
-	import sbt._
-	
-	object MyPlugins extends Build {
-	  lazy val root = Project("root", file(".")) dependsOn(
-	    uri("git://github.com/steppenwells/sbt-sh.git")
-	  )
-	}
-
-The sh plugin will be downloaded, built and installed next time you fire up sbt-0.10, and then available in all your sbt-0.10 builds.
