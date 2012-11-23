@@ -22,7 +22,7 @@ Happiness and productivity ensues without the hassle of exiting sbt or opening m
 Installing
 ----------
 
-The easiest way to install the sbt-sh plugin is to add it to your global sbt plugin list. To do this create a *.sbt/plugins/project* file (if it does not already exist). In this file add the dependency on the sbt-sh plugin:
+The easiest way to install the sbt-sh plugin is to add it to your global sbt plugin list. To do this create a *.sbt/plugins/project/build.scala* file (if it does not already exist). In this file add the dependency on the sbt-sh plugin:
 
 	import sbt._
 	
