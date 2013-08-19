@@ -1,7 +1,6 @@
 package org.sbtsh
 
 import sbt._
-import sbt.CommandSupport._
 
 object SbtShPlugin extends Plugin {
 
